@@ -1,0 +1,44 @@
+output:
+    sort-results: true
+
+linters-settings:
+    cyclop:
+        max-complexity: 30
+    exhaustive:
+        default-signifies-exhaustive: true
+    ireturn:
+        allow:
+            - anon
+            - error
+            - stdlib
+            - (or|er)$
+            - github.com/noonien/np.Node
+    gocognit:
+        min-complexity: 35
+
+linters:
+    enable-all: true
+    disable:
+        # don't need these
+        - exhaustruct
+        - gci
+        - godox
+        - nlreturn
+        - varnamelen
+        - wsl
+
+        # deprecated, replaced by other linters
+        - deadcode
+        - exhaustivestruct
+        - gocyclo
+        - golint
+        - maligned
+        - nosnakecase
+        - scopelint
+        - structcheck
+        - varcheck
+
+        # these don't support generics yet
+        - rowserrcheck
+        - sqlclosecheck
+        - wastedassign
